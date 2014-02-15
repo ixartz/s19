@@ -67,16 +67,16 @@ int read_int()
 
 int read_hex()
 {
-  char strHex[30] = {0};
+  char str_hex[30] = {0};
   int sum = 0;
   int i;
 
-  if (scanf_secure(strHex, 30))
+  if (scanf_secure(str_hex, 30))
   {
-    for (i = 0; strHex[i] != 0 && strHex[i+1] != 0; i += 2)
+    for (i = 0; str_hex[i] != 0 && str_hex[i+1] != 0; i += 2)
     {
       sum = sum << 8;
-      sum += two_ascii_to_char(strHex[i], strHex[i+1]);
+      sum += two_ascii_to_char(str_hex[i], str_hex[i+1]);
     }
 
     return sum;

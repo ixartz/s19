@@ -4,6 +4,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
+# include "conversion.h"
 
 // displays a error when there is a error in the S19 data file
 void print_error(unsigned int line);
