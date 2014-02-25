@@ -5,7 +5,7 @@ LIBS =
 
 EXEC = s19
 SRC = conversion.c io.c check.c decode.c file.c display.c main.c
-OFILES = ${SRC:.cc=.o}
+OFILES = ${SRC:.c=.o}
 
 all: .depend $(OFILES)
 	$(CC) $(CXXFLAGS) $(LIBS) $(OFILES) -o $(EXEC)
@@ -13,9 +13,13 @@ all: .depend $(OFILES)
 %.o: %.cc
 	$(CC) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
 
+doc:
+	doxygen Doxyfile
+
 clean:
 	rm -f .depend
 	rm -f $(OFILES)
+	rm -Rf doc
 
 depend: .depend
 

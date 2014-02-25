@@ -7,15 +7,24 @@
 
 # define SIZE_MEMORY 65536
 
-// Calculates the number of byte allocated for the adress
+/**
+**@define Calculates the number of byte allocated for the adress
+*/
 unsigned int nb_Byte_per_adress(unsigned int line_code);
 
-// Retrieve number of Byte for the data
+/**
+**@define Retrieve number of Byte for the data
+*/
 unsigned int retrieve_nb_Byte(FILE* file, unsigned int* sum);
 
-// Calculate adress. Where do we put data ?
+/**
+**@define Calculate adress. Where do we put data ?
+*/
 unsigned int retrieve_adress(FILE* file, unsigned int* sum, unsigned int nb_Byte_adress);
 
+/**
+**@define Load data to memory
+*/
 void put_data_in_memory(FILE* file,
                         unsigned char* memory,
                         unsigned int* sum,
@@ -23,7 +32,10 @@ void put_data_in_memory(FILE* file,
                         unsigned int nb_Byte_adress,
                         unsigned int adress);
 
-// verif_check_sum, check if the calculated check-sum corresponds the check-sum in the file
+/**
+**@define Check whether the calculated check-sum
+**corresponds to attempted check-sum containing in the file
+*/
 char calculate_checksum(unsigned int sum, FILE* file);
 
 #endif /* !DECODE_H */

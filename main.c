@@ -3,7 +3,7 @@
 #include "decode.h"
 #include "display.h"
 
-// Displays a menu and waits the user choice
+/* Display a menu and wait the user choice */
 void menu(void)
 {
   unsigned char* memory = (unsigned char*)malloc(SIZE_MEMORY * sizeof(unsigned char));
@@ -18,9 +18,10 @@ void menu(void)
 
     if (loaded)
     	printf("[2] Display data\n");
+
     printf("[9] Exit\n");
 
-    // Retrieve user choice
+    /* Retrieve user choice */
     printf("Your choice: ");
     selection = read_int();
 

@@ -42,8 +42,8 @@ unsigned char ascii_to_hex(unsigned char c)
 unsigned char two_ascii_to_char(unsigned char c1, unsigned char c2)
 {
   char result = ascii_to_hex(c1);
-  result = result << 4; // One char use 4 bits
-  return result | ascii_to_hex(c2); // Creation of a char from 2 4-bits
+  result = result << 4; /* One ASCII char use 4 bits */
+  return result | ascii_to_hex(c2); /* Creation of a char from 2 * 4-bits */
 }
 
 unsigned int truncate_sum(unsigned int sum)

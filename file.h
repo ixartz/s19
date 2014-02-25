@@ -10,10 +10,15 @@ void clear_line(FILE* file);
 
 void decode_s19(FILE* file, unsigned char* memory);
 
-// Retrieve the file name what user wants to open. Then, it opens the file and put into memory
+/**
+**@define Retrieve the file name what user wants to open.
+**Then, it opens the file and put into memory.
+*/
 void retrieve_filename();
 
-// Open a file and put into the memory
+/**
+**@define Open a file and put into the memory.
+*/
 void load_file(unsigned char* memory);
 
 #endif /* !FILE_H */
