@@ -27,4 +27,6 @@ depend: .depend
 	rm -f .depend
 	$(CC) -MM $(INCLUDE) $^ > .depend
 
+.PHONY: doc
+
 include .depend

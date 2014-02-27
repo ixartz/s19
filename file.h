@@ -6,8 +6,14 @@
 
 # define MAX_INPUT_SIZE 1000
 
+/**
+**@define Read all characters from stream until the end of line.
+*/
 void clear_line(FILE* file);
 
+/**
+**@define Decode a s19 file.
+*/
 void decode_s19(FILE* file, unsigned char* memory);
 
 /**

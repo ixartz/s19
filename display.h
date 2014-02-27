@@ -5,7 +5,7 @@
 # include "decode.h"
 
 /**
-**@define Display data from user input
+**@define Display data from user input.
 */
 void display_data(unsigned char* memory);
 

@@ -1,6 +1,6 @@
 #include "decode.h"
 
-unsigned int nb_Byte_per_adress(unsigned int line_code)
+unsigned int nb_Byte_per_address(unsigned int line_code)
 {
   switch (line_code)
   {
@@ -34,39 +34,39 @@ unsigned int retrieve_nb_Byte(FILE* file, unsigned int* sum)
   return current_char;
 }
 
-unsigned int retrieve_adress(FILE* file, unsigned int* sum, unsigned int nb_Byte_adress)
+unsigned int retrieve_address(FILE* file, unsigned int* sum, unsigned int nb_Byte_address)
 {
-  unsigned int adress = 0, i;
+  unsigned int address = 0, i;
   unsigned char current_char;
 
-  for (i = 0; i < nb_Byte_adress; ++i)
+  for (i = 0; i < nb_Byte_address; ++i)
   {
-    adress = adress << 8;
+    address = address << 8;
     current_char = fgetc(file);
     current_char = two_ascii_to_char(current_char, fgetc(file));
     *sum += current_char;
-    adress += current_char;
+    address += current_char;
   }
 
-  return adress;
+  return address;
 }
 
 void put_data_in_memory(FILE* file,
                         unsigned char* memory,
                         unsigned int* sum,
                         unsigned int nb_Byte,
-                        unsigned int nb_Byte_adress,
-                        unsigned int adress)
+                        unsigned int nb_Byte_address,
+                        unsigned int address)
 {
   unsigned int i;
   unsigned char current_char;
 
-  for (i = 0; i < nb_Byte - nb_Byte_adress - 1; ++i)
+  for (i = 0; i < nb_Byte - nb_Byte_address - 1; ++i)
   {
     current_char = fgetc(file);
     current_char = two_ascii_to_char(current_char, fgetc(file));
     *sum += current_char;
-    memory[adress + i] = current_char;
+    memory[address + i] = current_char;
   }
 }
 
