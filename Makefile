@@ -10,7 +10,7 @@ OFILES = ${SRC:.c=.o}
 all: .depend $(OFILES)
 	$(CC) $(CXXFLAGS) $(LIBS) $(OFILES) -o $(EXEC)
 
-%.o: %.cc
+%.o: %.c
 	$(CC) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
 
 doc:
